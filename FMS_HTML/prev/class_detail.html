@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <table border="1px">
+        <tr>
+            <td>
+                Profile Pic
+            </td>
+            <td>
+                Sr.No
+            </td>
+            <td>
+                Name
+            </td>
+            <td>
+                Father Name
+            </td>
+            <td>
+                Father CNIC no
+            </td>
+            <td>
+                Father Contact no
+            </td>
+        </tr>
+        {% for data in data %}
+
+                <tr>
+            <td>
+                <a href="student_data/{{data.id}}">
+                <img src="{{data.image.url}}" width="40" height="50">
+                    </a>
+            </td>
+            <td>
+               {{data.id}}
+            </td>
+            <td>
+                {{data.name}}
+            </td>
+            <td>
+                {{data.father_name}}
+            </td>
+            <td>
+                {{data.father_cnic_no}}
+            </td>
+            <td>
+                {{data.father_contact_no}}
+            </td>
+        </tr>
+
+    {% endfor %}
+
+    </table>
+</p>
+
+</body>
+</html>

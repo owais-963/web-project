@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>
+        Enter The Number
+    </label>
+    <input placeholder="Enter the Number" id="num">
+    <button type="submit" onclick="BinarySearch()"></button>
+
+    <script>
+        var arr=[]
+        for(i=0; i<=1000; i++){
+            arr[i]=i
+        }
+        console.log(arr)
+        function BinarySearch(){
+            var num = document.getElementById("num").value
+            //console.log(num)
+            num = parseInt(num)
+            console.log(num*8)
+            min_=0
+            max_=arr.length
+            Flag = true
+    
+            while(Flag){
+                mid=(min_+max_)/2
+                mid=Math.floor(mid)
+                if(arr[mid]==num){
+                    console.log(mid)
+                    Flag = false
+                    break
+                }else if(arr[mid]<num){
+                    min_=mid+1
+                }
+                else if(arr[mid]>num){
+                    max_=mid-1
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>

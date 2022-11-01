@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FEE VOUCHER</title>
+</head>
+<body>
+
+<form method="post" action="{% url 'fees_pay' %}">
+    <label for="class">
+        class
+    </label>
+    <select name="class_filter" id="class" required>
+       
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+    <input type="search" name="search">
+    <input type="submit" value="search">
+</form>
+
+    <table border="1px">
+        <tr>
+            <td>
+                Profile Pic
+            </td>
+            <td>
+                Sr.No
+            </td>
+            <td>
+                Name
+            </td>
+            <td>
+                Father Name
+            </td>
+            <td>
+                Class
+            </td>
+            <td>
+                Father CNIC no
+            </td>
+            <td>
+                Father Contact no
+            </td>
+        </tr>
+
+                <tr>
+            <td>
+                <a href="{% url 'voucher' data.id data.grade %}">
+                <img src="{{data.image.url}}" width="40" height="50">
+                    </a>
+            </td>
+            <td>
+               1
+            </td>
+            <td>
+                name
+            </td>
+            <td>
+                father name
+            </td>
+            <td>
+               1
+            </td>
+            <td>
+             father_cnic_no
+            </td>
+            <td>
+                father_contact_no
+            </td>
+        </tr>
+
+    
+
+    </table>
+
+<center>
+<h1>
+    No data Found
+</h1>
+    <a href="{% url 'fees_pay' %}">
+        <h3>
+            Go Back to table
+        </h3>
+    </a>
+</center>
+
+
+</body>
+</html>

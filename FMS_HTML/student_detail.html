@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% for data in data %}
+
+<a href="{% url 'edit_student_data' data.id %}">
+    Edit Student Info
+</a><br>
+<img src="{{data.image.url}}" width="85" height="100">
+<h4> Sr.no: </h4>
+<b>{{data.id}}</b>
+<h4> Name: </h4>
+<b>{{data.name}}</b>
+<h4> Father Name: </h4>
+<b>{{data.father_name}}</b>
+<h4> Gender</h4>
+<b>{{data.gender}}</b>
+<h4> Class: </h4>
+<b>{{data.grade}}</b>
+<h4> Father CNIC no: </h4>
+<b>{{data.father_cnic_no}}</b>
+<h4> Father Contact No: </h4>
+<b>{{data.father_contact_no}}</b>
+<h4> Home Phone No</h4>
+<b>{{data.home_phone_no}}</b>
+<h4> Email: </h4>
+<b>{{data.email}}</b>
+<h4> Address: </h4>
+<p>{{data.address}}</p>
+{% endfor %}
+
+<table border="=1.6px">
+    <tr>
+    <td>
+        Month
+    </td>
+    <td>
+        Fee Status
+    </td>
+    <td>
+        Collected by
+    </td>
+        <td>
+            Date of Collection
+        </td>
+    </tr>
+    {% for fd in fee_data %}
+    <tr>
+    <td>
+        {{fd.month}}
+    </td>
+    <td>
+        {{fd.status}}
+    </td>
+    <td>
+        {{fd.collected_by}}
+    </td>
+        <td>
+            {{fd.payment_date}}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+
+</body>
+</html>
